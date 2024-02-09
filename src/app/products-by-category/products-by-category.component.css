@@ -1,0 +1,14 @@
+table, th, td {
+    border: 1px solid black;
+      }
+
+      tr:nth-child(2) {
+        counter-reset: rowNumber;
+      }
+      table tr {
+        counter-increment: rowNumber;
+      }
+      table tr td:first-child::before {
+        content: counter(rowNumber);
+        
+      }

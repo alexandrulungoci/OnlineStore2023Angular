@@ -1,0 +1,22 @@
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Product name</th>
+      <th>Price</th>
+    </tr>
+    
+    <tr *ngFor='let product of productList'>
+      <td></td>
+      <td>{{product.productName}}</td>
+      <td>{{product.price}}</td>
+      <td><button (click)="delete(product.id)">Delete</button></td>
+        <td><a [routerLink]="['/product-details', product.id]">Learn More</a></td>
+        <td><button (click)="addToCart(1, this.product.id)">Add to cart</button></td>
+
+      
+    </tr>
+  </table>
+
+  <br>
+  <!-- <button  routerLink="/products-by-category/:{{categoryId}}">Go Back</button> -->
+  <button  routerLink="/categories">Go Back</button>

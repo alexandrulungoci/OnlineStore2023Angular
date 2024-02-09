@@ -1,0 +1,21 @@
+<p>address works!</p>
+
+<p>Address</p>
+<form><div>
+                <label for="country"> Country</label><br>
+                <input type="text" name="country" [(ngModel)] = "address.country"  placeholder="Country"/><br>
+                <label for="city"> City</label><br>
+                <input type="text" name="city" [(ngModel)] = "address.city" placeholder="City"/><br>
+                <label for="street"> Street</label><br>
+                <input type="text" name="street" [(ngModel)] = "address.street"  placeholder="Street"/><br>
+                <label for="streetNumber"> Street Number</label><br>
+                <input type="text" name="streetNumber" [(ngModel)] = "address.streetNumber"  placeholder="number"/><br>
+                <label for="zipcode"> Zipcode</label><br>
+                <input type="text" name="zipcode" [(ngModel)] = "address.zipcode"  placeholder="zipcode"/><br>
+            
+
+                
+            </div></form>
+
+                
+            <button (click)="addAddress()">Add address</button>

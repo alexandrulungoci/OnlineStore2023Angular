@@ -1,0 +1,33 @@
+
+<p>CART COMPONENT</p>
+<BR>
+<table >
+
+    <tr>
+      <th>Nmb</th>
+      <th>Product name</th>
+      <th>Product price</th>
+      <th>Quantity</th>
+      <th>Line Price</th>
+    </tr>
+    <tr *ngFor="let orderLine of cart?.orderLineDtoList" >
+<!--          <td>{{orderLine.id}}</td>-->
+      <td></td>
+      <td>{{orderLine.product.productName}}</td>
+      <td>{{orderLine.productPrice}}</td>
+      <td>{{orderLine.quantity}}</td>
+      <td >{{orderLine.linePrice}}</td>
+      <td><button (click)="deleteFromCart(1, orderLine.id)">Delete</button></td>
+
+
+      <td><a [routerLink]="['/orderLine-update',orderLine.id]">Edit</a></td>
+
+    </tr>
+
+  </table>
+
+  <p>Total cost: {{cart?.totalCartCost}}</p>
+
+  <td><button (click)="addOrder()">Add order</button></td>
+
+  <button  routerLink="/products">Go back to products</button>

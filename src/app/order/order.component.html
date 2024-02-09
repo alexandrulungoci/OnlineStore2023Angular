@@ -1,0 +1,58 @@
+
+
+
+<p>orders</p>
+<BR>
+<!-- <table >
+
+    <tr>
+      <th>Nmb</th>
+      <th>User Name</th>
+      <th>Date</th>
+      <th>Order Cost</th>
+      
+    </tr>
+    <tr *ngFor="let order of orders" >
+      <td></td>
+      <td>{{order.userName}}</td>
+      <td>{{order.orderDate}}</td>
+      <td>{{order.totalCost}}</td>
+
+    </tr>
+
+  </table> -->
+
+  <br>
+  <div *ngFor="let order of orders">
+    <p>Name:  {{order.userName}}</p>
+    <p>Order date: {{order.orderDate}}</p>
+    <p>Order cost: {{order.totalCost}}</p>
+
+  <table >
+
+    <tr>
+        <th>Nmb</th>
+      <th>Product</th>
+      <th>Product price</th>
+      <th>Quantity</th>
+      <th>Cost</th>
+      
+    </tr>
+
+ 
+        <tr *ngFor="let orderLine of order.orderLineList">
+     <td></td>
+      <td>{{orderLine.product.productName}}</td>
+      <td>{{orderLine.product.price}}</td>
+      <td>{{orderLine.quantity}}</td>
+      <td>{{orderLine.linePrice}}</td>
+    </tr>
+
+  </table>
+  <br><br>
+
+</div>
+
+  <br><br>
+
+  <button  routerLink="/products">Go back to products</button>

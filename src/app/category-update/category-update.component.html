@@ -1,0 +1,14 @@
+<p>Edit category : {{category.categoryName}}</p>
+<!-- <p>Edit category : {{categoryId}}</p> -->
+
+<br>
+<form>
+
+    <div>
+      <label for="name"> Name</label><br>
+      <input type="text" name="name" [(ngModel)]="category.categoryName"  placeholder="category name"/>
+    </div><br>
+
+    <button (click)="updateCategory()">Update Category</button>
+
+   </form>

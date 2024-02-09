@@ -1,0 +1,40 @@
+<h4>All categories </h4>
+  
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Category name</th>
+  
+  </tr>
+  
+  <tr *ngFor='let category of categories'>
+    <td></td>
+    <td>{{category.categoryName}}</td>
+
+    <td><a [routerLink]="['/category-update',category.id]">Edit</a></td>
+    <td><button (click)="delete(category.id)">Delete</button></td>
+    <td><a [routerLink]="['/products-by-category',category.id]">Products</a></td>
+    <!-- <td><button routerLink="category-update/{{category.id}}">Edit</button></td> -->
+
+  </tr>
+</table>
+
+ <!-- <a [routerLink]="['/product', categoryData.id]">Products</a> -->
+
+  <div>
+    <p>Add category</p>
+     <form>
+
+      <div>
+        <label for="name"> Name</label><br>
+        <input type="text" name="name" [(ngModel)]="category.categoryName"  placeholder="Name"/>
+      </div>
+
+     </form>
+  </div>
+
+  <button (click)="addCategory()">Add Category</button>
+
+  
+  
+  <!-- [(ngModel)]="categoryData.categoryName" -->

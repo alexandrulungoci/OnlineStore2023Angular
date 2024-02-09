@@ -1,0 +1,89 @@
+<div>
+  <p>Add product</p>
+
+  <form>
+    
+    <div>
+      <label>Select category</label><br>
+      <select [(ngModel)]="product.category" name="category" value="product.category">
+        <!-- <option selected >select category</option> -->
+        <option *ngFor="let category of categories" [ngValue]="category">{{category.categoryName}}</option>
+
+      </select>
+
+    </div>
+    
+
+
+    <div>    
+      <label for="name"> Name</label><br>
+      <input type="text" name="name" [(ngModel)]="product.productName" [ngModelOptions]="{standalone: true}" placeholder="product name"/><br>
+
+    
+      <label for="price"> Price</label><br>
+      <input type="text" name="price" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" placeholder="product price"/>
+    </div>
+
+    <!-- <div>
+      <label for="price"> Price</label><br>
+      <input type="text" name="price" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" placeholder="price"/>
+    </div> -->
+
+  </form>
+  
+</div><br>
+
+<!-- <div>
+  <p>FERRARI F430</p>
+  <img  src="assets/images/ferrari2.png">
+</div> -->
+
+<button (click)="addProduct()">Create product</button><br><br>
+
+
+
+<h4>All products </h4>
+
+    <table>
+      <tr>
+        <th>Nmb</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <!-- <th>Image</th> -->
+      </tr>
+      
+      <tr *ngFor='let product of productList'>
+        <td></td>
+        <td>{{product.productName}}</td>
+        <td>{{product.price}}</td>
+        <!-- <td>{{product.thumbnail}}</td> -->
+        
+
+        <td><button (click)="delete(product.id)">Delete</button></td>
+        <td><a [routerLink]="['/product-details', product.id]">Learn More</a></td>
+        <td><button (click)="addToCart(1, this.product.id)">Add to cart</button></td>
+
+      </tr>
+    </table>
+
+    
+
+      <td><a [routerLink]="['/cart']">View cart</a></td><br><br>
+
+
+      <!-- <table>
+        <tr>
+          <th>Nmb1</th>
+          <th>Product name1</th>
+          <th>Price1</th>
+        </tr>
+        
+        <tr *ngFor='let product1 of productList1'>
+          <td></td>
+          <td>{{product1.productName}}</td>
+          <td>{{product1.price}}</td>
+          <td><button (click)="delete(product1.id)">Delete1</button></td>
+    
+        </tr>
+      </table> -->
+

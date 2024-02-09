@@ -1,0 +1,19 @@
+
+
+<p>Update orderLine {{orderLine.id}}</p>
+
+
+<form>
+
+    <div>
+      <label for="name"> quantity</label><br>
+      <input type="number" name="name" [(ngModel)]="orderLine.quantity"  placeholder="quantity"/>
+    </div><br>
+
+    <button (click)="updateOrderLine()">Update quantity</button><br>
+    <button routerLink="/cart">Go back to cart</button>
+
+   </form>
+
+
+   
